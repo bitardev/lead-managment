@@ -86,7 +86,7 @@ const VerticalMenu = ({ dictionary, scrollMenu }) => {
           ''
         )}
         {/* <MenuSection label={dictionary['navigation'].appsPages}> */}
-        <MenuSection>
+        <MenuSection label={dictionary['navigation'].menu}>
           {session?.user?.role === 'admin' ? (
             <>
               <MenuItem href={`/${locale}/apps/calendar`} icon={<i className='tabler-calendar' />}>
@@ -110,10 +110,38 @@ const VerticalMenu = ({ dictionary, scrollMenu }) => {
           ) : (
             ''
           )}
-          <SubMenu label={dictionary['navigation'].leads} icon={<i className='tabler-user' />}>
-            <MenuItem href={`/${locale}/apps/lead/list`}>{dictionary['navigation'].list}</MenuItem>
-            <MenuItem href={`/${locale}/apps/lead/view`}>{dictionary['navigation'].view}</MenuItem>
-          </SubMenu>
+          {session?.user?.role === 'agent' || session?.user?.role === 'manager' ? (
+            <>
+              {/* <SubMenu label={dictionary['navigation'].leads} icon={<i className='tabler-user' />}>
+              <MenuItem href={`/${locale}/apps/lead/view`}>{dictionary['navigation'].view}</MenuItem>
+            </SubMenu> */}
+              <MenuItem href={`/${locale}/apps/lead/list`} icon={<i className='tabler-layout-list' />}>
+                {dictionary['navigation'].leads}
+              </MenuItem>
+            </>
+          ) : (
+            ''
+          )}
+          {session?.user?.role === 'manager' ? (
+            <>
+              <MenuItem href={`/${locale}/apps/agent/list`} icon={<i className='tabler-user' />}>
+                {dictionary['navigation'].manageAgents}
+              </MenuItem>
+              <MenuItem href={`/${locale}/apps/projet/list`} icon={<i className='tabler-hammer' />}>
+                {dictionary['navigation'].manageProjetcs}
+              </MenuItem>
+              {/* <SubMenu label={dictionary['navigation'].manageAgents} icon={<i className='tabler-user' />}>
+                <MenuItem href={`/${locale}/apps/user/list`}>{dictionary['navigation'].list}</MenuItem>
+                <MenuItem href={`/${locale}/apps/user/view`}>{dictionary['navigation'].view}</MenuItem>
+              </SubMenu>
+              <SubMenu label={dictionary['navigation'].manageProjetcs} icon={<i className='tabler-category-2' />}>
+                <MenuItem href={`/${locale}/apps/user/list`}>{dictionary['navigation'].list}</MenuItem>
+                <MenuItem href={`/${locale}/apps/user/view`}>{dictionary['navigation'].view}</MenuItem>
+              </SubMenu> */}
+            </>
+          ) : (
+            ''
+          )}
           {session?.user?.role === 'admin' ? (
             <>
               <SubMenu label={dictionary['navigation'].rolesPermissions} icon={<i className='tabler-lock' />}>

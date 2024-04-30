@@ -15,6 +15,8 @@ import { ensurePrefix, withoutSuffix } from '@/utils/string'
 
 // Constants
 const HOME_PAGE_URL = '/dashboards/crm'
+const HOME_PAGE_URL_MANAGER = '/apps/agent/list'
+const HOME_PAGE_URL_AGENT = '/apps/lead/list'
 
 const getLocale = request => {
   // Try to get locale from URL
@@ -94,12 +96,17 @@ export default withAuth(
     const isRequestedRouteIsGuestRoute = guestRoutes.some(route => pathname.endsWith(route))
 
     if (isUserLoggedIn && isRequestedRouteIsGuestRoute) {
+      // if (request.nextauth.token.role === 'manager') return localizedRedirect(HOME_PAGE_URL_MANAGER, locale, request)
+      // else if (request.nextauth.token.role === 'agent') return localizedRedirect(HOME_PAGE_URL_AGENT, locale, request)
+      // else
       return localizedRedirect(HOME_PAGE_URL, locale, request)
     }
 
     // If the user is logged in and is trying to access root page, redirect to the home page
     if (pathname === '/' || pathname === `/${locale}`) {
-      return localizedRedirect(HOME_PAGE_URL, locale, request)
+      if (request.nextauth.token.role === 'manager') return localizedRedirect(HOME_PAGE_URL_MANAGER, locale, request)
+      else if (request.nextauth.token.role === 'agent') return localizedRedirect(HOME_PAGE_URL_AGENT, locale, request)
+      else return localizedRedirect(HOME_PAGE_URL, locale, request)
     }
 
     // If pathname already contains a locale, return next() else redirect with localized URL

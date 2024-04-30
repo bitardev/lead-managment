@@ -33,7 +33,7 @@ const Timeline = styled(MuiTimeline)({
 const UserActivityTimeLine = () => {
   return (
     <Card>
-      <CardHeader title='User Activity Timeline' />
+      <CardHeader title='User Activity Timeline3' />
       <CardContent>
         <Timeline>
           <TimelineItem>

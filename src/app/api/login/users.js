@@ -14,7 +14,15 @@ export const users = [
     name: 'Michael Maurin',
     password: 'agent',
     email: 'agent@vuexy.com',
-    image: '/images/avatars/2.png',
+    image: '/images/avatars/3.png',
     role: 'agent'
+  },
+  {
+    id: 3,
+    name: 'Michel Riya',
+    password: 'manager',
+    email: 'manager@vuexy.com',
+    image: '/images/avatars/2.png',
+    role: 'manager'
   }
 ]

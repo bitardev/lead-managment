@@ -16,6 +16,8 @@
     "view": "Voir",
     "rolesPermissions": "Rôles et autorisations",
     "leads": "Leads",
+    "manageAgents": "Gestion des agents",
+    "manageProjetcs": "Gestion des projets",
     "roles": "Les rôles",
     "permissions": "Autorisations",
     "pages": "Pages",
@@ -30,6 +32,7 @@
     "notAuthorized401": "Non autorisé - 401",
     "authPages": "Pages d'authentification",
     "login": "Connexion",
+    "menu": "Menu",
     "loginV1": "Connexion v1",
     "loginV2": "Connexion v2",
     "register": "S'inscrire",
@@ -81,5 +84,15 @@
     "menuLevel2": "Niveau menu 2",
     "menuLevel3": "Niveau menu 3",
     "disabledMenu": "Menu désactivé"
+  },
+  "buttons": {
+    "addNewUser": "Ajouter un nouveau utilisateur",
+    "export": "Exporter",
+    "searchUser": "Trouver un utilisateur",
+    "searchProject": "Trouver un projet",
+    "addNewProject": "Ajouter un nouveau projet"
+  },
+  "titles": {
+    "filters": "Filtres"
   }
 }

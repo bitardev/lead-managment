@@ -16,6 +16,8 @@
     "view": "View",
     "rolesPermissions": "Roles & Permissions",
     "leads": "Leads",
+    "manageAgents": "Manage agents",
+    "manageProjetcs": "Manage projetcs",
     "roles": "Roles",
     "permissions": "Permissions",
     "pages": "Pages",
@@ -30,6 +32,7 @@
     "notAuthorized401": "Not Authorized - 401",
     "authPages": "Auth Pages",
     "login": "Login",
+    "menu": "Menu",
     "loginV1": "Login v1",
     "loginV2": "Login v2",
     "register": "Register",
@@ -81,5 +84,15 @@
     "menuLevel2": "Menu Level 2",
     "menuLevel3": "Menu Level 3",
     "disabledMenu": "Disabled Menu"
+  },
+  "buttons": {
+    "addNewUser": "Add new user",
+    "export": "Export",
+    "searchUser": "Search User",
+    "searchProject": "Search Project",
+    "addNewProject": "Add new project"
+  },
+  "titles": {
+    "filters": "Filters"
   }
 }

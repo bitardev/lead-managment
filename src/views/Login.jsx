@@ -20,7 +20,7 @@ import Divider from '@mui/material/Divider'
 import Alert from '@mui/material/Alert'
 
 // Third-party Imports
-import { signIn } from 'next-auth/react'
+import { signIn, useSession } from 'next-auth/react'
 import { Controller, useForm } from 'react-hook-form'
 import { valibotResolver } from '@hookform/resolvers/valibot'
 import { object, minLength, string, email } from 'valibot'
@@ -94,6 +94,9 @@ const Login = ({ mode }) => {
   const hidden = useMediaQuery(theme.breakpoints.down('md'))
   const authBackground = useImageVariant(mode, lightImg, darkImg)
 
+  // check user role
+  const { data: session, status } = useSession()
+
   const {
     control,
     handleSubmit,
@@ -126,6 +129,8 @@ const Login = ({ mode }) => {
     if (res && res.ok && res.error === null) {
       // Vars
       const redirectURL = searchParams.get('redirectTo') ?? '/'
+
+      console.log('redirectURL', redirectURL)
 
       router.push(getLocalizedUrl(redirectURL, locale))
     } else {

@@ -12,7 +12,7 @@ export const db = [
     status: 'inactive',
     avatar: '',
     avatarColor: 'primary',
-    billing: 'Auto Debit'
+    billing: 'Auto Debit2'
   },
   {
     id: 2,

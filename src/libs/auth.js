@@ -114,7 +114,7 @@ export const authOptions = {
       return token
     },
     async session({ session, token }) {
-      if (token && session.user) {
+      if (session.user) {
         // ** Add custom params to user in session which are added in `jwt()` callback via `token` parameter
         session.user.name = token.name
         session.user.role = token.role
